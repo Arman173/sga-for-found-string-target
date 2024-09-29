@@ -33,3 +33,11 @@ def generateInitialPopulation(N: int, T: str):
             ranString += ranGene()
         generated.append(ranString)
     return generated
+
+# fitness function, depends from the what similar is Individual than target
+def fitness(Individual: str, t: str):
+    f = 0
+    for i in range(0, len(Individual)):
+        if Individual[i] != t[i]:
+            f += 1
+    return f
